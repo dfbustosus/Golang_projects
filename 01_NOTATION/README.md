@@ -1,10 +1,10 @@
-# Referencia
+# Reference
 https://go.dev/ref/spec
 
-# Generallidades
-Go es un lenguaje de **propósito general** diseñado teniendo en cuenta la programación de sistemas. Está **fuertemente tipado** con **garbage collector** y tiene soporte para **programación concurrente**. Los programas se construyen a partir de `paquetes`, cuyas propiedades permiten una gestión eficiente de las dependencias.
+# Generalities
+Go is a **general-purpose language** designed with systems programming in mind. It is **strongly typed** with a **garbage collector** and has support for **concurrent programming**. Programs are built from `packages`, whose properties allow for efficient management of dependencies.
 
-La sintaxis es compacta y fácil de analizar, lo que permite un análisis sencillo mediante herramientas automáticas como el entorno de desarrollo integrado.
+The syntax is compact and easy to parse, enabling straightforward analysis through automated tools like the integrated development environment.
 
 # Keywords
 ```
@@ -15,7 +15,7 @@ const        fallthrough  if           range        type
 continue     for          import       return       var
 ```
 
-# Operadores
+# Operators
 
 ```
 +    &     +=    &=     &&    ==    !=    (    )
