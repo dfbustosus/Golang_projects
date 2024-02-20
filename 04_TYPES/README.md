@@ -69,3 +69,61 @@ floatSlice[2] = 3.212
 // Increase the size of the slice by appending a new element
 floatSlice = append(floatSlice, 4.567)
 ```
+
+# Structs
+
+A struct in Go is a way to group related data together. It's like a container that holds different pieces of information, each identified by a name. You can think of a struct as a blueprint for creating objects.
+
+
+**Anatomy of a Struct**
+
+- **Fields:** These are the individual pieces of data inside a struct. Each field has a name and a type. For example, a struct representing a person might have fields like name, age, and isMarried.
+
+- **Declaration:** You define a struct using the type keyword followed by the name of the struct and a list of its fields enclosed in curly braces {}.
+
+```go
+type Person struct {
+    name string
+    age  int
+    isMarried bool
+}
+
+// Creating an instance of Person struct
+var john Person
+
+// Setting values for fields
+john.name = "John"
+john.age = 30
+john.isMarried = true
+
+// Accessing values
+fmt.Println(john.name)       // Output: John
+fmt.Println(john.age)        // Output: 30
+fmt.Println(john.isMarried)  // Output: true
+```
+
+A struct can contain another struct as one of its fields. This is called **embedding**.
+
+```go
+// Define Address struct
+type Address struct {
+    city  string
+    state string
+}
+
+// Define Person struct with Address embedded
+type Person struct {
+    name    string
+    age     int
+    address Address  // Embedded struct
+}
+
+// Creating a person instance
+var jane Person
+jane.name = "Jane"
+jane.age = 25
+jane.address.city = "New York"
+jane.address.state = "NY"
+```
+
+There are other technical aspects regaring structs but we will not go into them in for now.
