@@ -127,3 +127,54 @@ jane.address.state = "NY"
 ```
 
 There are other technical aspects regaring structs but we will not go into them in for now.
+
+
+# Pointers
+Pointers in Go are variables that **store memory addresses**. They are widely used in Go for various purposes, including efficient memory management, passing references to functions, and working with data structures like slices and maps. Let's break down pointers in Go into simpler terms:
+
+**Main properties**
+- **Memory Address:** In Go, every variable has a memory address, which is a unique identifier for where it's stored in the computer's memory.
+- **Pointer:** A pointer is a variable that stores the memory address of another variable.
+- **Syntax:** To declare a pointer, you use the asterisk `*` symbol followed by the type of the variable it points to.
+
+Here are some examples>
+```go
+var ptr *int
+```
+
+**Initializing Pointers**
+
+- Zero Value: By default, when a pointer is declared, it is initialized to `nil`, which means it doesn't point to **any valid memory address**.
+
+**Getting the Address of a Variable**
+
+- Address-of Operator `(&)`: To get the memory address of a variable, you use the address-of operator `&`.
+
+Here are examples:
+```go
+var num int = 42
+var ptr *int = &num // ptr now points to the memory address of num
+```
+
+**Dereferencing Pointers**
+- Dereference Operator `(*)`: To access the value stored at the memory address pointed to by a pointer, you use the dereference operator *.
+
+Example:
+```go
+var num int = 42
+var ptr *int = &num // referencing to num
+fmt.Println(*ptr) // Output: 42 
+```
+
+**Passing Pointers to Functions**
+- Pass by Reference: When you pass a pointer to a function, you're passing the memory address of the variable, allowing the function to modify the original value.
+
+```go
+func modifyValue(ptr *int) {
+    *ptr = 100
+}
+
+var num int = 42
+modifyValue(&num)
+fmt.Println(num) // Output: 100
+```
